@@ -11,6 +11,7 @@ ping = Gauge('internet_ping', 'Ping in milliseconds')
 def run_speed_test(st):
     try:
         # Run speedtest-cli and capture the output
+        st.get_best_server()
         st.download()
         st.upload()
 
